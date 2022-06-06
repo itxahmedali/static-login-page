@@ -1,0 +1,34 @@
+<nav *ngIf="user || post" class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <div class="row w-100 d-flex justify-content-end">
+      <div class="col w-100 d-flex justify-content-end">
+        <a class="nav-link" *ngIf="post || user" [routerLink]="['']">Home</a>
+        <a class="nav-link" *ngIf="post" [routerLink]="['/posts']">Posts</a>
+        <a class="nav-link" *ngIf="user" [routerLink]="['/users']">Users</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="text-center">Welcome Admin</h1>
+      <h4 class="text-center" *ngIf="!user && !post">You are not allowed to view anything</h4>
+    </div>
+  </div>
+</div>
+<div class="waveWrapper waveAnimation">
+  <div class="waveWrapperInner bgTop">
+      <div class="wave waveTop"
+          style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+  </div>
+  <div class="waveWrapperInner bgMiddle">
+      <div class="wave waveMiddle"
+          style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+  </div>
+  <div class="waveWrapperInner bgBottom">
+      <div class="wave waveBottom"
+          style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+  </div>
+</div>
+<router-outlet></router-outlet>

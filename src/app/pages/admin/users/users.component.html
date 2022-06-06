@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <i *ngIf="write" class="fa fa-plus"></i>
+    <div class="col-lg-12">
+      <h1 class="text-center mt-3 mb-3">Users</h1>
+    </div>
+    <div class="col-lg-4 mt-1 mb-1" *ngFor="let user of users">
+      <div class="card" style="width: 100%">
+        <img
+          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+          class="card-img-top"
+        />
+        <div
+          class="card-body d-flex justify-content-center align-items-center flex-column"
+        >
+          <h5 class="card-title text-center">{{ user?.name }}</h5>
+          <p class="card-text text-center">{{ user?.email }}</p>
+          <button
+            class="btn btn-primary"
+            [routerLink]="['/users/user', user?.id]"
+          >
+            View Profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="waveWrapper waveAnimation">
+    <div class="waveWrapperInner bgTop">
+      <div
+        class="wave waveTop"
+        style="
+          background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png');
+        "
+      ></div>
+    </div>
+    <div class="waveWrapperInner bgMiddle">
+      <div
+        class="wave waveMiddle"
+        style="
+          background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png');
+        "
+      ></div>
+    </div>
+    <div class="waveWrapperInner bgBottom">
+      <div
+        class="wave waveBottom"
+        style="
+          background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png');
+        "
+      ></div>
+    </div>
+  </div>
+</div>

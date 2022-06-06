@@ -1,0 +1,31 @@
+      <div
+      id="btn"
+      #btnNav
+      (click)="navToggle()"
+      *ngIf="navbar"
+    >
+      <div id="top"></div>
+      <div id="middle"></div>
+      <div id="bottom"></div>
+    </div>
+    <div id="box" #boxNav>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <p class="item" *ngIf="user || post" (click)="navToggle()" [routerLink]="['']" >Home</p>
+          </div>
+          <div class="col-lg-12">
+            <p class="item" *ngIf="user" (click)="navToggle()" [routerLink]="['/users']" >Users</p>
+          </div>
+          <div class="col-lg-12">
+            <p class="item" *ngIf="post" (click)="navToggle()" [routerLink]="['/posts']" >Posts</p>
+          </div>
+          <div class="col-lg-12">
+            <button (click)="logout()">Logout</button>
+          </div>
+        </div>
+      </div>
+      </div>
+
+<app-loader></app-loader>
+<router-outlet></router-outlet>

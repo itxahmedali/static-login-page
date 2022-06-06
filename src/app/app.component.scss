@@ -1,0 +1,117 @@
+#btn {
+    position: fixed;
+    z-index: 5;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+    -webkit-transition: left 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91);
+    transition: left 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91);
+}
+
+#btn div {
+    width: 35px;
+    height: 2px;
+    margin-bottom: 8px;
+    background-color: #fff;
+    -webkit-transition: -webkit-transform 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91),
+        opacity 500ms, box-shadow 250ms, background-color 500ms;
+    transition: transform 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91),
+        opacity 500ms, box-shadow 250ms, background-color 500ms;
+}
+
+#btn:hover>div {
+    box-shadow: 0 0 1px #fff;
+}
+
+#btn.active {
+    left: 230px;
+}
+
+#btn.active div {
+    background-color: #ffffff;
+}
+
+#btn.active:hover>div {
+    box-shadow: 0 0 1px #343838;
+}
+
+#btn.active #top {
+    -webkit-transform: translateY(10px) rotate(-135deg);
+    -ms-transform: translateY(10px) rotate(-135deg);
+    transform: translateY(10px) rotate(-135deg);
+}
+
+#btn.active #middle {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+}
+
+#btn.active #bottom {
+    -webkit-transform: translateY(-10px) rotate(-45deg);
+    -ms-transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+#box {
+    position: fixed;
+    z-index: 4;
+    overflow: hidden;
+    top: 0px;
+    left: -275px;
+    width: 275px;
+    opacity: 0;
+    padding: 20px 0px;
+    height: 100%;
+    background: linear-gradient(307deg, #70336c, #27273c);
+    color: #343838;
+    -webkit-transition: all 350ms cubic-bezier(0.6, 0.05, 0.28, 0.91);
+    transition: all 350ms cubic-bezier(0.6, 0.05, 0.28, 0.91);
+}
+
+.bigScreenSideBar,
+.smallScreenSidebar {
+    height: 100%;
+    width: 100%;
+}
+
+#box.active {
+    left: 0px;
+    opacity: 1;
+}
+button {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 9px 14px;
+    transition: 0.5s all ease-in-out;
+    min-width: 200px;
+
+    &:hover {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+.item {
+    position: relative;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 15px 30px;
+    -webkit-transition: all 250ms;
+    transition: all 250ms;
+    color: #fff;
+}
+
+.item:hover {
+    padding: 15px 45px;
+    background-color: rgba(52, 56, 56, 0.2);
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
